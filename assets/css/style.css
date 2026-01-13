@@ -383,9 +383,9 @@
       letter-spacing: 0.5px;
       border: 2px solid transparent;
       transition: all 0.3s ease;
-      padding: 8px 10px;     /* Dikey ve yatay boşlukları küçült */
-      font-size: 14px;       /* Yazı boyutu küçültüldü */
-      border-radius: 6px;    /* Köşe yuvarlaklığını biraz küçült */
+      padding: 8px 10px;
+      font-size: 14px;
+      border-radius: 6px;
     }
 
 
@@ -494,7 +494,7 @@
       width: 100%;
       overflow: hidden;
       padding-top: 50px;
-      padding-bottom: 110px; /* Bölüme üst-alt nefes kazandırır */
+      padding-bottom: 110px;
     }
 
     .flavors-section h2 {
@@ -509,7 +509,7 @@
       font-family: 'Playfair Display', serif;
       color: #ffffff;
       font-size: 40px;
-      margin-bottom: 30px; /* Başlıktan grid’e profesyonel geçiş */
+      margin-bottom: 30px;
       letter-spacing: 1px;
       text-align: center;
     }
@@ -517,11 +517,11 @@
     .flavors-grid {
       display: flex;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 0; /* Orijinal kenar yapısı korunuyor */
+      gap: 0; 
       max-width: 100%;
       margin: 0 auto;
-      flex-wrap: wrap; /* Sıkıştırma aktif */
-      justify-content: center;  /* Ortala */
+      flex-wrap: wrap; 
+      justify-content: center;
     }
 
     .flavor-card {
@@ -530,8 +530,8 @@
       cursor: pointer;
       transition: transform 0.4s ease;
       flex: 0 0 100%;
-      height: 480px; /* Yükseklik optimize edildi */
-      display: block;  /* Mobilde görünür/gizlenir */
+      height: 480px; 
+      display: block; 
     }
 
     .flavor-card img {
@@ -568,7 +568,7 @@
     }
 
 
-    /* === NOKTA GÖSTERGELERİ (Sadece mobilde) === */
+    /* DOTS */
     .dots {
       text-align: center;
       margin: 20px 0;
@@ -591,7 +591,7 @@
     }
 
 
-    /* MÜŞTERİ YORUMLARI */
+    /* CUSTOMER REVIEWS */
     .testimonials {
       background: #0e141b;
       text-align: center;
@@ -619,7 +619,6 @@
       font-weight: 600;
     }
 
-    /* 🌇 FERRO’YU SEVİYORUM BÖLÜMÜ */
     .testimonials-section {
       position: relative;
       background: 
@@ -630,7 +629,7 @@
       overflow: hidden;
     }
 
-    /* Üst-alt geçişli fade efekti */
+    /* Top-bottom fade effect */
     .testimonials-section::before,
     .testimonials-section::after {
       content: "";
@@ -652,7 +651,7 @@
       background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
     }
 
-    /* İçerik */
+    /* Content */
     .testimonials-container {
       position: relative;
       z-index: 2;
@@ -724,7 +723,6 @@
       color: #f1f1f1;
     }
 
-    /* ✨ Animasyonlar ✨ */
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-25px); }
       to { opacity: 1; transform: translateY(0); }
@@ -735,7 +733,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /*📍 İLETİŞİM BÖLÜMÜ */
+    /* CONTACT */
     .contact-section {
       display: flex;
       flex-direction: row;
@@ -746,7 +744,7 @@
 
     .contact-left {
       width: 50%;
-      background: url('ferro.png') center/cover no-repeat; /* Görselini buraya koy */
+      background: url('ferro.png') center/cover no-repeat;
     }
     
 
@@ -828,23 +826,21 @@
        justify-content: flex-end;
        gap: 30px;
        font-size: 12px;
-       margin-bottom: 10%; /* Çizgi ile yazı arasına boşluk */
+       margin-bottom: 10%; 
     }
 
      .footer-links a:link,
      .footer-links a:visited,
      .footer-links a:hover,
      .footer-links a:active {
-      color: #fff;             /* Tüm durumlarda beyaz kalır */
+      color: #fff;  
     }
 
 
     
-    /* ======================
-    🔹 Responsive Tasarım
-     ====================== */
+    /* Responsive Design */
+    /* Mobil Slider (768px – 1024px) */
 
-    /* 📱 Mobil Slider */
     @media (max-width: 768px) {
       .section-title {
         font-size: 34px;
@@ -876,7 +872,6 @@
       }
     }
 
-    /* 📱📱 TABLET TASARIMI (768px – 1024px) */
     @media (min-width: 768px) and (max-width: 1024px) {
 
       .section-title {
@@ -928,7 +923,6 @@
     }
 
 
-    /* === TABLET & MASAÜSTÜ === */
     @media (min-width: 769px) {
       .gallery {
         transform: none !important;
@@ -937,7 +931,7 @@
       .flavor-card {
         flex: 1;
         height: 450px;
-        display: block !important; /* Hepsi görünür */
+        display: block !important; 
       }
 
       .dots {
@@ -945,15 +939,14 @@
       }
     }
 
-    /* === MOBİL: Sadece 1 fotoğraf görünsün === */
     @media (max-width: 768px) {
 
       .flavor-card {
-        display: none; /* Hepsi gizlenir */
+        display: none; 
       }
 
       .flavor-card.active-slide {
-        display: block;   /* Sadece seçilen flavor-cardgörünür */
+        display: block; 
       }
 
       .flavor-card {
@@ -970,16 +963,15 @@
     }
 
 
-    /* Tablet */
     @media (max-width: 1024px) {
       .menu-section {
-        padding: 20px 15px; /* kenar boşluğu 10px */
+        padding: 20px 15px; 
         gap: 20px;
       }
       
       .menu-left img,
       .menu-box img {
-        width: 100%; /* görseller %50 boyuta iner */
+        width: 100%; 
         margin: 0 auto;
         display: block;
       }
@@ -1000,7 +992,6 @@
     }
 
 
-    /* RESPONSIVE */
     @media (max-width: 900px) {
       .hero-content h1 {
         font-size: 64px;
@@ -1043,64 +1034,58 @@
       }
     }
 
+    @media (max-width: 768px) {
 
-/* MOBİL GÖRÜNÜM */
-@media (max-width: 768px) {
+      .contact-section {
+        flex-direction: column;  
+        height: auto;            
+      }
 
-  .contact-section {
-    flex-direction: column;   /* üst üste gelsin */
-    height: auto;             /* mobilde taşma olmasın */
-  }
+      .contact-left {
+        width: 100%;
+        height: 260px;   
+        order: 1;  
+      }
 
-  /* FOTOĞRAF ÜSTE */
-  .contact-left {
-    width: 100%;
-    height: 260px;            /* sabit yükseklik mobilde çok daha iyi görünür */
-    order: 1;                 /* ÜSTE AL */
-  }
+      .contact-right {
+        width: 100%;
+        padding: 40px 25px;
+        text-align: center;
+        order: 2;             
+      }
 
-  /* İLETİŞİM BİLGİLERİ ALTA */
-  .contact-right {
-    width: 100%;
-    padding: 40px 25px;
-    text-align: center;
-    order: 2;                 /* FOTOĞRAFIN ALTINA AL */
-  }
+      .contact-right h1 {
+        font-size: 60px;
+        margin-bottom: -33px;
+      }
 
-  .contact-right h1 {
-    font-size: 60px;
-    margin-bottom: -33px;
-  }
-
-  .contact-right h2 {
-    font-size: 40px;
-  }
+      .contact-right h2 {
+        font-size: 40px;
+      }
   
+      footer {
+        position: static;
+        margin-top: 40%;
+        padding-top: 15px;
+        border-top: 1px solid #fff;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        }
 
-  /* Mobilde footer en alta düzgün otursun */
-  footer {
-    position: static;
-    margin-top: 40%;
-    padding-top: 15px;
-    border-top: 1px solid #fff;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
+      .footer-right, .footer-left {
+        margin: 0 auto;
 
-  .footer-right, .footer-left {
-    margin: 0 auto;
+      }
 
-  }
+      .footer-logo {
+        font-size: 45px;
+        margin-right: 70px;
+      }
 
-  .footer-logo {
-    font-size: 45px;
-    margin-right: 70px;
-  }
-
-  .footer-links {
-    justify-content: center;
-    gap: 50px;
-    margin-bottom:15px;
-  }
+      .footer-links {
+        justify-content: center;
+        gap: 50px;
+        margin-bottom:15px;
+      }
 }
