@@ -1,0 +1,205 @@
+<!--
+@package SariGrid
+Theme Name: Ferro
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferro - Ateş Et Ferro</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600;900&family=Montserrat:wght@500;700&display=swap">
+     
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+
+  <!-- HERO -->
+  <header>
+    <video autoplay muted loop playsinline poster="">
+      <source src="assets/video/Ferro.mp4" type="video/mp4">
+    </video>
+    <nav class="navbar">
+      <a href="#" class="logo">Ferro</a>
+      <div class="center-hamburger" id="hamburgerBtn" aria-label="Menüyü Aç/Kapat" role="button">
+        <div class="hamburger-line"></div>
+      </div>
+      <div class="menu-overlay" id="menuOverlay">
+        <ul>
+          <li><a href="#home">Anasayfa</a></li>
+          <li><a href="#about">Tarihçemiz</a></li>
+          <li><a href="#menu">Lezzetler</a></li>
+          <li><a href="#testi">Müşteri</a></li>
+          <li><a href="#contact">İletişim</a></li>
+          
+          <!-- Mobilde görünecek butonlar -->
+          <li class="extra"><a href="#" class="btn-link">Rezervasyon</a></li>
+        </ul>
+      </div>
+      <div class="menu">
+        <a href="#">REZERVASYON</a>
+        <a href="#">İLETİŞİM</a>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <h1>Ferro</h1>
+      <h3>Lezzetin Tek Adresi</h3>
+      <button class="btn">Online Menü</button>
+    </div>
+  </header>
+
+<!-- HİSTORY -->
+  <section class="history-section">
+    <!-- Üst üste gelen görseller -->
+    <div class="history-images">
+        <img src="assets/img/1.jpg" alt="meat" loading="lazy" class="img-fluid card-img card-hover reveal">
+        <img src="assets/img/hkn.jpg" alt="meat" loading="lazy" class="img-fluid card-img card-hover reveal">
+    </div>
+    <!-- Sağdaki metin alanı -->
+    <div class="history-content">
+      <h2>Ferro</h2>
+      <h3>TARİHÇEMİZ</h3>
+      <p>
+        1990 yılında Hakan Bey’in öncülüğünde kurulan Ferro, kuruluşundan bu yana,
+        her detayda kaliteyi ve sadeliği ilke edinen Ferro, ilk günden itibaren
+        “iyi etin” ne demek olduğunu yeniden tanımlamayı amaçlamıştır.
+        Hakan Bey’in kasaplık mesleğinden gelen ustalığı, dünya mutfaklarına olan
+        ilgisiyle birleşerek, Ferro’yu kısa sürede lezzet tutkunlarının
+        vazgeçilmez adreslerinden biri haline getirmiştir.
+      </p>
+      <button class="btn-red">Daha Fazla</button>
+    </div>
+  </section>
+
+<!-- 🔥 LEZZETLERİMİZ BÖLÜMÜ -->
+  <section class="flavors-section" id="flavors">
+    <h2>Ferro</h2>
+    <h3>LEZZETLERİMİZ</h3>
+        <div class="flavors-grid">
+            <div class="flavor-card">
+                <img src="assets/img/3.jpg" alt="Izgara Et">
+                <div class="overlay">Beyaz Et</div>
+            </div>
+            <div class="flavor-card">
+                <img src="assets/img/9.jpg" alt="Antrikot">
+                <div class="overlay">Izgara Et</div>
+            </div>
+            <div class="flavor-card">
+                <img src="assets/img/5.jpg" alt="Burger">
+                <div class="overlay">Burger</div>
+            </div>
+            <div class="flavor-card">
+                <img src="assets/img/8.jpg" alt="Bonfile">
+                <div class="overlay">Bonfile</div>
+            </div>
+            <div class="flavor-card">
+                <img src="assets/img/7.jpg" alt="Tatlı & Kahve">
+                <div class="overlay">Pizza</div>
+            </div>
+            <div class="flavor-card">
+                <img src="assets/img/4.jpg" alt="Tatlı & Kahve">
+                <div class="overlay">Tatlı & Kahve</div>
+            </div>
+        </div>
+
+          <!-- Dots burada, grid DIŞINDA yer almalı -->
+    <div class="dots"></div>
+  </section>
+
+<!-- Sol taraftaki büyük fotoğraf -->
+  <section class="menu-section">
+    <!-- Sol taraftaki büyük fotoğraf -->
+    <div class="menu-left">
+      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Ferro Steak Görseli">
+    </div>
+<!-- Sağ taraftaki iki küçük görsel -->
+    <div class="menu-right">
+      <div class="menu-box">
+        <img src="assets/img/mnü.jpg" alt="Online Menü Görseli">
+        <a href="https://www.ornek.com" class="menu-btn">Online Menu</a>
+      </div>
+      <div class="menu-box">
+        <img src="assets/img/rzv.jpg" alt="Rezervasyon Görseli">
+        <a href="https://www.ornek.com" class="menu-btn">Rezervasyon</a>
+      </div>
+    </div>
+  </section>
+
+<!-- Yorum Bölümü -->
+  <section class="testimonials-section">
+    <div class="testimonials-container">
+      <div class="section-subtitle">Ferro</div>
+      <div class="section-title">FERRO’YU SEVİYORUM</div>
+
+      <div class="quotes">
+        <div class="quote-box">
+          <span class="quote-symbol">“</span>
+          <div class="quote-author">A.BİLEN</div>
+          <div class="quote-text">Sakin ama iddialı. Tıpkı iyi pişmiş bir steak gibi.</div>
+        </div>
+
+        <div class="quote-box">
+          <span class="quote-symbol">“</span>
+          <div class="quote-author">H.DİZDAR</div>
+          <div class="quote-text">Ne fazla söz vardır, ne gereksiz gösteriş. Et konuşur, ateş anlatır, siz sadece tadını çıkarırsınız.</div>
+        </div>
+
+        <div class="quote-box">
+          <span class="quote-symbol">“</span>
+          <div class="quote-author">E.AKICI</div>
+          <div class="quote-text">Et seçimi, pişirme tekniği, sunum tarzı… Her aşamada hissedilen bu özen, Ferro’yu yıllardır farklı kılıyor.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- 📞 İLETİŞİM -->
+  <section class="contact-section">
+    <div class="contact-left"></div>
+    <div class="contact-right">
+      <h1>Ferro</h1>
+      <h2>İLETİŞİM</h2>
+
+      <div class="info-block">
+        <h3>TELEFON:</h3>
+        <p>0123 456 78 90</p>
+      </div>
+
+      <div class="info-block">
+        <h3>E-POSTA ADRESİ</h3>
+        <p>ferro@gmail.com</p>
+      </div>
+
+      <div class="info-block">
+        <h3>RESTORAN</h3>
+        <p>Atatürk Cad. No:123 Kadıköy/İstanbul</p>
+      </div>
+
+      <footer>
+        <div class="footer-left">
+          Copyright © 2025 FERRO. Tüm hakları saklıdır.
+        </div>
+        
+        <div class="footer-right">
+          <div class="footer-logo">Ferro</div>
+          
+          <div class="footer-links">
+              <a href="/terms">TERMS</a>
+                <a href="/condition">CONDITION</a>
+              <a href="/policy">POLICY</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+<!-- JS -->
+  <script src="assets/js/script.js"></script>
+
+</body>
+</html>

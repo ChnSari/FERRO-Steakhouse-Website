@@ -1,0 +1,1106 @@
+
+:root {
+      --bg: #0e141b;
+      --glass: rgba(255, 255, 255, 0.1);
+      --blur: 16px;
+      --text: #fff;
+      --accent: #c51616;
+      --transition: 0.35s cubic-bezier(.25, .8, .25, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    body {
+      color: #fff;
+      background-color: #000;
+      overflow-x: hidden;
+    }
+
+
+    /* HEADER */
+    header {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    header video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: -1;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      width: 100%;
+      padding: 0 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 5;
+    }
+
+    .navbar .logo {
+      font-family: "Great Vibes", cursive;
+      font-size: 70px;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 2px;
+      z-index: 10;
+    }
+
+    .navbar .menu {
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar .menu a {
+      background: #a90b0b;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 3px;
+      transition: background 0.3s ease;
+      font-size: 14px;
+    }
+
+    .navbar .menu a:hover {
+      background: #c20f0f;
+    }
+    
+    /* HAMBURGER BUTTON */
+    .center-hamburger {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 66px;
+      background: var(--glass);
+      border-radius: 16px;
+      backdrop-filter: blur(var(--blur));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 100;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+      transition: transform var(--transition), background var(--transition), left var(--transition);
+    }
+
+    .center-hamburger:hover {
+      transform: translateX(-50%) scale(1.05);
+      background: rgba(255, 255, 255, 0.15);
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .hamburger-line {
+      width: 70px;
+      height: 4px;
+      background-color: var(--text);
+      border-radius: 3px;
+      transition: all var(--transition);
+      position: relative;
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .hamburger-line::before,
+    .hamburger-line::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background-color: var(--text);
+      border-radius: 3px;
+      transition: all var(--transition);
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .hamburger-line::before { top: -10px; }
+    .hamburger-line::after { top: 10px; }
+
+    .center-hamburger.active .hamburger-line {
+      background-color: transparent;
+    }
+
+    .center-hamburger.active .hamburger-line::before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    .center-hamburger.active .hamburger-line::after {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+
+
+    /* FULL OVERLAY MENU */
+    .menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 15, 20, 0.95);
+      backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition);
+      z-index: 90;
+    }
+
+    .menu-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .menu-overlay ul {
+      list-style: none;
+      text-align: center;
+    }
+
+    .menu-overlay li {
+      margin: 20px 0;
+    }
+
+    .menu-overlay a {
+      text-decoration: none;
+      font-size: 2rem;
+      color: var(--text);
+      font-weight: 600;
+      transition: color var(--transition);
+    }
+
+    .menu-overlay a:hover {
+      color: var(--accent);
+    }
+
+    
+    /* HERO CONTENT */
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      z-index: 4;
+      animation: fadeIn 2s ease;
+    }
+
+    .hero-content h1 {
+      font-family: "Great Vibes", cursive;
+      font-size: 100px;
+      line-height: 50px;
+    }
+
+    .hero-content h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      font-weight: 500;
+      margin-top: 20px;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    .hero-content h3::before,
+    .hero-content h3::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 80px;
+      height: 2px;
+      background: #fff;
+      transform: translateY(-50%);
+    }
+
+    .hero-content h3::before {
+      left: -100px;
+    }
+
+    .hero-content h3::after {
+      right: -100px;
+    }
+
+    .hero-content .btn {
+      margin-top: 40px;
+      background: #a90b0b;
+      color: #fff;
+      border: none;
+      padding: 12px 35px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero-content .btn:hover {
+      background: #c51616;
+    }
+
+    /* -- VİSUAL BLOCK -- */
+    .history-section{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 4%;
+      gap: 80px;
+      flex-wrap: wrap;
+    }
+
+    .history-images {
+      position: relative;
+      flex: 1;
+      min-width: 320px;
+      max-width: 620px;
+      height: 520px;
+    }
+
+    .history-images img {
+      position: absolute;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .history-images img:first-child {
+      width: 80%;
+      height: 80%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .history-images img:last-child {
+      width: 80%;
+      height: 80%;
+      bottom: 0;
+      right: -5px;
+      z-index: 2;
+    }
+
+    /* -- TEXT BLOCK -- */
+    .history-content {
+      flex: 1;
+      min-width: 320px;
+      max-width: 650px;
+    }
+
+    .history-content h2 {
+      font-family: "Great Vibes", cursive;
+      font-size: 70px;
+      color: #ccc;
+      margin-bottom: -38px;
+    }
+
+    .history-content h3 {
+      font-family: 'Playfair Display', serif;
+      color: #c40000;
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .history-content p {
+      color: #ddd;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      text-align: justify;
+    }
+
+    .btn-red {
+      background-color: #c40000;
+      color: #fff;
+      border: none;
+      padding: 14px 34px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-red:hover {
+      background-color: #e10000;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+    }
+
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+      }
+
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+
+    /* -- Buttons Inside the Menu Overlay -- */
+    .menu-overlay .btn-link {
+      display: inline-block;
+      background-color: #b80d0d;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      padding: 8px 10px;     /* Dikey ve yatay boşlukları küçült */
+      font-size: 14px;       /* Yazı boyutu küçültüldü */
+      border-radius: 6px;    /* Köşe yuvarlaklığını biraz küçült */
+    }
+
+
+    .menu-overlay .btn-link.secondary:hover {
+      background-color: #b80d0d;
+      color: #fff;
+    }
+
+    .menu-overlay li.extra {
+      margin-top: 20px;
+    }
+
+    .menu-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 80px 5%;
+      gap: 130px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Large left visual */
+    .menu-left {
+      flex: 1;
+      min-width: 320px;
+      max-width: 600px;
+    }
+
+    .menu-left img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      display: block;
+    }
+
+    .menu-left img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    
+    /* Right side - two small images */
+    .menu-right {
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 22px;
+      flex: 1;
+      min-width: 100px;
+      max-width: 42%;
+      justify-content: center;
+    }
+
+    .menu-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+
+    .menu-box img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.8);
+      transition: transform 0.5s ease, filter 0.5s ease;
+    }
+
+
+    .menu-btn {
+      text-decoration: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #b30000;
+      color: #fff;
+      padding: 14px 40px;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      font-size: 17px;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+    }
+
+    .menu-box:hover .menu-btn {
+      background-color: #b31616;
+      transform: translate(-50%, -50%) scale(1.05);
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+    }
+    
+
+    /* OUR FLAVORS SECTION */
+    .flavors-section {
+      background-color: #a90b0b;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding-top: 50px;
+      padding-bottom: 110px; /* Bölüme üst-alt nefes kazandırır */
+    }
+
+    .flavors-section h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 80px;
+      color: #a3a3a3;
+      text-align: center;
+      margin-bottom: -40px;
+    }
+
+    .flavors-section h3 {
+      font-family: 'Playfair Display', serif;
+      color: #ffffff;
+      font-size: 40px;
+      margin-bottom: 30px; /* Başlıktan grid’e profesyonel geçiş */
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .flavors-grid {
+      display: flex;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0; /* Orijinal kenar yapısı korunuyor */
+      max-width: 100%;
+      margin: 0 auto;
+      flex-wrap: wrap; /* Sıkıştırma aktif */
+      justify-content: center;  /* Ortala */
+    }
+
+    .flavor-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+      flex: 0 0 100%;
+      height: 480px; /* Yükseklik optimize edildi */
+      display: block;  /* Mobilde görünür/gizlenir */
+    }
+
+    .flavor-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease, filter 0.6s ease;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      opacity: 0;
+      backdrop-filter: blur(0px);
+      background: rgba(0, 0, 0, 0.45);
+      transition: opacity 0.5s ease, background 0.5s ease;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .flavor-card:hover img {
+      filter: blur(5px);
+      transform: scale(1.1);
+    }
+
+    .flavor-card:hover .overlay {
+      opacity: 1;
+      backdrop-filter: blur(5px);
+    }
+
+
+    /* === NOKTA GÖSTERGELERİ (Sadece mobilde) === */
+    .dots {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 5px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .dot.active {
+      background-color: white;
+      transform: scale(1.2);
+    }
+
+
+    /* MÜŞTERİ YORUMLARI */
+    .testimonials {
+      background: #0e141b;
+      text-align: center;
+      padding: 100px 4%;
+    }
+
+    .testimonials h2 {
+      color: var(--accent);
+      font-size: 38px;
+      margin-bottom: 50px;
+    }
+
+    .testimonial {
+      max-width: 700px;
+      margin: 0 auto;
+      font-style: italic;
+      line-height: 1.8;
+      color: #ccc;
+    }
+
+    .testimonial span {
+      display: block;
+      margin-top: 15px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* 🌇 FERRO’YU SEVİYORUM BÖLÜMÜ */
+    .testimonials-section {
+      position: relative;
+      background: 
+      linear-gradient(to right, rgba(0,0,0,0.92) 0%, rgba(202,160,109,0.05) 50%, rgba(0,0,0,0.9) 100%),
+      url('aa.jpg') center/cover no-repeat;
+      padding: 60px 20px 160px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Üst-alt geçişli fade efekti */
+    .testimonials-section::before,
+    .testimonials-section::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 140px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .testimonials-section::before {
+      top: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent);
+    }
+
+    .testimonials-section::after {
+      bottom: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+    }
+
+    /* İçerik */
+    .testimonials-container {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-subtitle {
+      font-family: 'Great Vibes', cursive;
+      font-size: 80px;
+      color: #a3a3a3;
+      margin-bottom: -45px;
+      animation: fadeInDown 1s ease;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 46px;
+      letter-spacing: 1px;
+      margin-bottom: 70px;
+      animation: fadeInDown 1s ease;
+      text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+    }
+
+    .quotes {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .quote-box {
+      flex: 1;
+      min-width: 280px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      padding: 40px 30px;
+      border-radius: 14px;
+      backdrop-filter: blur(6px);
+      transition: all 0.4s ease;
+      position: relative;
+      text-align: left;
+      box-shadow: 0 0 20px rgba(0,0,0,0.45);
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .quote-box:hover {
+      background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px rgba(202,160,109,0.25);
+    }
+
+    .quote-symbol {
+      font-size: 42px;
+      color: #fff;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .quote-author {
+      font-weight: 600;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .quote-text {
+      font-weight: 400;
+      line-height: 1.6;
+      font-size: 15px;
+      color: #f1f1f1;
+    }
+
+    /* ✨ Animasyonlar ✨ */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /*📍 İLETİŞİM BÖLÜMÜ */
+    .contact-section {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .contact-left {
+      width: 50%;
+      background: url('ferro.png') center/cover no-repeat; /* Görselini buraya koy */
+    }
+    
+
+    .contact-right {
+      width: 50%;
+      background-color: #7a0000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px;
+      position: relative;
+    }
+
+    .contact-right h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 80px;
+      color: #a3a3a3;
+      margin-bottom: -45px;
+    }
+
+    .contact-right h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 50px;
+      font-weight: 900;
+      margin-bottom: 40px;
+      color: #fff;
+    }
+
+    .info-block {
+      margin-bottom: 35px;
+      text-align: left;
+      
+    }
+
+    .info-block h3 {
+      font-weight: 700;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+    .info-block p {
+      font-size: 16px;
+      color: #f0f0f0;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 30px;
+      left: 80px;
+      right: 80px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      border-top: 1px solid #fff;
+      padding-top: 15px;
+      font-size: 13px;
+    }
+
+    .footer-left {
+      color: #fff;
+    }
+
+    .footer-right {
+       text-align: right;
+       margin-left: auto;
+    }
+
+    .footer-right .footer-logo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 70px;
+      color: #d1c3c3;
+      margin-top: -60%;
+      text-align: right;
+    }
+
+    .footer-links {
+       display: flex;
+       justify-content: flex-end;
+       gap: 30px;
+       font-size: 12px;
+       margin-bottom: 10%; /* Çizgi ile yazı arasına boşluk */
+    }
+
+     .footer-links a:link,
+     .footer-links a:visited,
+     .footer-links a:hover,
+     .footer-links a:active {
+      color: #fff;             /* Tüm durumlarda beyaz kalır */
+    }
+
+
+    
+    /* ======================
+    🔹 Responsive Tasarım
+     ====================== */
+
+    /* 📱 Mobil Slider */
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 34px;
+      }
+
+      .section-subtitle {
+        font-size: 65px;
+        margin-bottom: -33px;
+
+      }
+
+      .quotes {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 20px;
+        padding-bottom: 20px;
+      }
+
+      .quote-box {
+        min-width: 85%;
+        max-width: 85%;
+        scroll-snap-align: center;
+      }
+
+      .quotes::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    /* 📱📱 TABLET TASARIMI (768px – 1024px) */
+    @media (min-width: 768px) and (max-width: 1024px) {
+
+      .section-title {
+        font-size: 40px;
+        margin-bottom: 60px;
+      }
+
+      .section-subtitle {
+        font-size: 80px;
+        margin-bottom: -40px;
+
+      }
+
+      .testimonials-section {
+        padding: 140px 40px;
+      }
+
+      .quotes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+        justify-content: center;
+      }
+
+      .quote-box {
+        min-width: auto;
+        max-width: 100%;
+        padding: 35px 28px;
+      }
+
+      .quote-symbol {
+        font-size: 40px;
+      }
+
+      .quote-text {
+        font-size: 16px;
+        line-height: 1.7;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+
+    /* === TABLET & MASAÜSTÜ === */
+    @media (min-width: 769px) {
+      .gallery {
+        transform: none !important;
+      }
+
+      .flavor-card {
+        flex: 1;
+        height: 450px;
+        display: block !important; /* Hepsi görünür */
+      }
+
+      .dots {
+        display: none;
+      }
+    }
+
+    /* === MOBİL: Sadece 1 fotoğraf görünsün === */
+    @media (max-width: 768px) {
+
+      .flavor-card {
+        display: none; /* Hepsi gizlenir */
+      }
+
+      .flavor-card.active-slide {
+        display: block;   /* Sadece seçilen flavor-cardgörünür */
+      }
+
+      .flavor-card {
+        height: 550px;
+      }
+
+      header h1 {
+        font-size: 36px;
+      }
+
+      header h2 {
+        font-size: 22px;
+      }
+    }
+
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+      .menu-section {
+        padding: 20px 15px; /* kenar boşluğu 10px */
+        gap: 20px;
+      }
+      
+      .menu-left img,
+      .menu-box img {
+        width: 100%; /* görseller %50 boyuta iner */
+        margin: 0 auto;
+        display: block;
+      }
+
+
+      .menu-left, .menu-right {
+        max-width: 100%;
+      }
+
+      .menu-right {
+        align-items: center;
+      }
+
+      .menu-btn {
+        font-size: 16px;
+        padding: 12px 32px;
+      }
+    }
+
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-content h1 {
+        font-size: 64px;
+      }
+
+      .hero-content h3 {
+        font-size: 20px;
+      }
+
+      .hero-content h3::before,
+      .hero-content h3::after {
+        width: 50px;
+      }
+
+      .navbar {
+        padding: 0 25px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .center-hamburger {
+        left: 85%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 55px;
+      }
+
+      .navbar .menu {
+        display: none;
+      }
+
+      .menu-overlay ul li.extra {
+        display: block;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .menu-overlay ul li.extra {
+        display: none;
+      }
+    }
+
+
+/* MOBİL GÖRÜNÜM */
+@media (max-width: 768px) {
+
+  .contact-section {
+    flex-direction: column;   /* üst üste gelsin */
+    height: auto;             /* mobilde taşma olmasın */
+  }
+
+  /* FOTOĞRAF ÜSTE */
+  .contact-left {
+    width: 100%;
+    height: 260px;            /* sabit yükseklik mobilde çok daha iyi görünür */
+    order: 1;                 /* ÜSTE AL */
+  }
+
+  /* İLETİŞİM BİLGİLERİ ALTA */
+  .contact-right {
+    width: 100%;
+    padding: 40px 25px;
+    text-align: center;
+    order: 2;                 /* FOTOĞRAFIN ALTINA AL */
+  }
+
+  .contact-right h1 {
+    font-size: 60px;
+    margin-bottom: -33px;
+  }
+
+  .contact-right h2 {
+    font-size: 40px;
+  }
+  
+
+  /* Mobilde footer en alta düzgün otursun */
+  footer {
+    position: static;
+    margin-top: 40%;
+    padding-top: 15px;
+    border-top: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-right, .footer-left {
+    margin: 0 auto;
+
+  }
+
+  .footer-logo {
+    font-size: 45px;
+    margin-right: 70px;
+  }
+
+  .footer-links {
+    justify-content: center;
+    gap: 50px;
+    margin-bottom:15px;
+  }
+}

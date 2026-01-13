@@ -1,0 +1,12 @@
+#IDE- VSCode
+*.vscode
+*.json
+
+#İmages
+img/
+*.png
+*.jpg
+
+#Videos
+video/
+*.mp4
