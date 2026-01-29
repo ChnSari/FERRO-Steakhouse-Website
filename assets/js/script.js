@@ -12,7 +12,7 @@ const items = document.querySelectorAll('.flavor-card');
 const dotsContainer = document.querySelector('.dots');
 let currentIndex = 0;
 
-/* Dots */
+/* DOST */
 items.forEach((_, i) => {
   const dot = document.createElement('div');
   dot.classList.add('dot');

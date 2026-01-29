@@ -840,7 +840,6 @@
     
     /* Responsive Design */
     /* Mobil Slider (768px – 1024px) */
-
     @media (max-width: 768px) {
       .section-title {
         font-size: 34px;
